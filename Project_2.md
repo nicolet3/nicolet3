@@ -4,7 +4,7 @@
 
 ### Canada's Northwest Passage:
 Croker Bay Glaciers
-##### Changes in temperature at melting glaciers at select depths from the Sea Surface to the seafloor.
+##### Changes in ocean temperature at melting glaciers at select depths from the sea surface to the seafloor.
 
 - Elevation in Meters
 
@@ -57,27 +57,43 @@ Map: My map shows the temperature changes between at select sub sea level elevat
 #this is to make sure that the file path checks out
 points = QgsVectorLayer('D:/Desktop/Project_2/points.shp', 'points')
 points.isValid()
+
 # Should Return "True"
 QgsProject.instance().addMapLayer(points)
 
+# this will tell it what file its going to work on
 renderer = points.renderer()
 renderer
+
+# now we going to change the vector dataset to a color of I want
 symbol = renderer.symbol()
 symbol.setColor(QColor(Qt.black))
 points.triggerRepaint()
 
+# ya got to make sure the color matches the layer tree colors
 layer_tree = iface.layerTreeView()
 layer_tree.refreshLayerSymbology(points.id())
 
+# Here we select the stations I care about by their ID attribute
 selection = points.getFeatures(QgsFeatureRequest(). setFilterExpression(u'"ID" = \'C4\' or "ID" = \'C5\' or "ID" = \'C6\' or "ID" = \'C7\' or "ID" = \'C8\' or "ID" = \'C9\' or "ID" = \'C10\' or "ID" = \'C14\' or "ID" = \'C15\' or "ID" = \'C22\' or "ID" = \'C16\''))
 points.selectByIds([s.id() for s in selection])
 iface.mapCanvas().zoomToSelected()
 
+# Now we got to make this selection a file
 QgsVectorFileWriter.writeAsVectorFormat(points, r'D:/Desktop/Project_2/hot.gpkg', 'utf-8', points.crs(),'GPKG', True)
-
 hot = QgsVectorLayer('D:/Desktop/Project_2/hot.gpkg', 'hot')
 hot.isValid()
 # Should Return "True"
 QgsProject.instance().addMapLayer(hot)
+
+# Time to make sure those puppies are red because of what they mean
+renderer = hot.renderer()
+symbol = renderer.symbol()
+symbol.setColor(QColor(Qt.red))
+hot.triggerRepaint()
+
+# You want that layer tree to match
+layer_tree = iface.layerTreeView()
+layer_tree.refreshLayerSymbology(hot.id())
 
 ```
