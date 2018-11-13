@@ -16,7 +16,7 @@ Croker Bay Glaciers
 ##### Currents cutting through the natural deep channel  that brings warm water to melt the ocean terminaiting glacier
 
 ![alt text](/hotspots.jpg)
-![alt text](/hotspots.jpg)
+![](https://nicolet3/nicolet3)
 
 ### Project Parameters & Code
 
