@@ -4,7 +4,7 @@
 
 ### Canada's Northwest Passage:
 Croker Bay Glaciers
-##### Changes in temperature at melting glaciers at slect depths from the Sea Surface to the seafloor.
+##### Changes in temperature at melting glaciers at select depths from the Sea Surface to the seafloor.
 
 - Elevation in Meters
 
@@ -15,7 +15,7 @@ Croker Bay Glaciers
 ### Red Points Represent the Prevailing Route for Inbound Warm Currents.
 ##### Currents cutting through the natural deep channel  that brings warm water to melt the ocean terminaiting glacier
 
-![alt text](/hotspots.jpg)
+![alt text](/hotspots.JPG)
 ![](https://nicolet3/nicolet3)
 
 ### Project Parameters & Code
